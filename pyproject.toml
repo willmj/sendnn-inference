@@ -93,6 +93,12 @@ extra-build-variables = { vllm = { VLLM_TARGET_DEVICE = "empty" } }
 
 [tool.uv.sources]
 vllm = { git = "https://github.com/vllm-project/vllm", rev = "v0.24.0" }
+# Track FMS + AFTU main so the image bakes granite_swa support (FMS PR #538
+# registers the granite_swa architecture + HF adapter; AFTU PR #205 adds the
+# --gpu_validation golden path and `import fms.models.hf`). Otherwise these
+# resolve to PyPI releases that predate granite_swa. Re-run `uv lock` to advance.
+ibm-fms = { git = "https://github.com/foundation-model-stack/foundation-model-stack.git", rev = "main" }
+aiu-fms-testing-utils = { git = "https://github.com/foundation-model-stack/aiu-fms-testing-utils.git", rev = "main" }
 torch = [
   { index = "pytorch-cpu" },
 ]

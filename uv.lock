@@ -195,8 +195,8 @@ wheels = [
 
 [[package]]
 name = "aiu-fms-testing-utils"
-version = "0.8.4"
-source = { registry = "https://pypi.org/simple" }
+version = "0.8.5.dev29+g0325bd646"
+source = { git = "https://github.com/foundation-model-stack/aiu-fms-testing-utils.git?rev=main#0325bd64662a8537803a2e3890294138ea17238a" }
 dependencies = [
     { name = "fms-model-optimizer", extra = ["fp8-infer"] },
     { name = "ibm-fms" },
@@ -205,9 +205,6 @@ dependencies = [
     { name = "torch", version = "2.11.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_machine != 'aarch64' and sys_platform == 'darwin'" },
     { name = "torch", version = "2.11.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_machine == 'aarch64' or sys_platform != 'darwin'" },
     { name = "transformers" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a0/21/2b1c3e796ba90bf13e7a8b9a143ba072a584d7def4f6be704598943bfa34/aiu_fms_testing_utils-0.8.4-py3-none-any.whl", hash = "sha256:98e6c6e7cd34ac8c239d36363ce51358af254afea9d34d731f7909699510e64f", size = 102152, upload-time = "2026-06-08T20:20:32.162Z" },
 ]
 
 [[package]]
@@ -1365,15 +1362,12 @@ wheels = [
 
 [[package]]
 name = "ibm-fms"
-version = "1.12.1"
-source = { registry = "https://pypi.org/simple" }
+version = "1.12.2.dev36+g44620ee4c"
+source = { git = "https://github.com/foundation-model-stack/foundation-model-stack.git?rev=main#44620ee4c2cb9a038b3d72a1d03a54d82724a9d8" }
 dependencies = [
     { name = "torch", version = "2.11.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_machine != 'aarch64' and sys_platform == 'darwin'" },
     { name = "torch", version = "2.11.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_machine == 'aarch64' or sys_platform != 'darwin'" },
     { name = "transformers" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/37/d8/d15d4280780c236499dc9e991c8f0b65d5be5811659cbac1bcb98ddf0520/ibm_fms-1.12.1-py3-none-any.whl", hash = "sha256:fc9214c98b245703f9fa828988c617c5eb16a3afa16fbbf4b7b34a5a8c5fe927", size = 258422, upload-time = "2026-07-01T16:52:31.722Z" },
 ]
 
 [[package]]
@@ -3936,7 +3930,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "fms-model-optimizer", extras = ["fp8-infer"], specifier = ">=0.8.3,<0.9" },
-    { name = "ibm-fms", specifier = ">=1.11.1,<2" },
+    { name = "ibm-fms", git = "https://github.com/foundation-model-stack/foundation-model-stack.git?rev=main" },
     { name = "torch", index = "https://download.pytorch.org/whl/cpu" },
     { name = "torchvision", index = "https://download.pytorch.org/whl/cpu" },
     { name = "transformers", specifier = ">=5.12.1" },
@@ -3945,7 +3939,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "aiu-fms-testing-utils", specifier = ">=0.8.2" },
+    { name = "aiu-fms-testing-utils", git = "https://github.com/foundation-model-stack/aiu-fms-testing-utils.git?rev=main" },
     { name = "pytest", specifier = ">=8.4.0" },
     { name = "pytest-asyncio", specifier = ">=1.0.0" },
     { name = "pytest-forked", specifier = ">=1.6.0" },
